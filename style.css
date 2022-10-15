@@ -1,0 +1,153 @@
+:root {
+  --primary0: #000000;
+  --primary10: #161b1d;
+  --primary20: #2d3539;
+  --primary30: #435056;
+  --primary40: #5a6a72;
+  --primary50: #70858f;
+  --primary60: #8d9da5;
+  --primary70: #a9b6bc;
+  --primary80: #c6ced2;
+  --primary90: #e2e7e9;
+  --primary95: #f1f3f4;
+  --primary99: #fcfdfd;
+  --primary100: #ffffff;
+  }
+  .baseColor {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+  }
+  .baseColor__preview {
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-radius: 50%;
+    place-content: center center;
+    place-items: center;
+    display: flex;
+    color: var(--primary10);
+  }
+  .baseColor hgroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tonalPreviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+    background-color: var(--primary90);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+  }
+
+  .tonalPreview {
+    width: 50px;
+    height: 50px;
+    /* display: inline-block; */
+    color: var(--primary99);
+    /* place-items: center; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    margin-bottom: 1.5rem;
+  }
+  .tonalPreview__label {
+    position: relative;
+    top: 50px;
+    color: var(--primary40);
+    text-align: center;
+    width: 50px;
+    display: block;
+    font-size: 1rem;
+  }
+ 
+  .color-picker__color-input {
+    width: 100px;
+    height: 100px;
+    border: none;
+    padding: 0;
+    margin-top: 3rem;
+  }
+
+.color-picker__text-input {
+    padding: 0.5rem;
+    width: 90%;
+    height: 50px;
+    font-size: 1.5rem;
+    margin-top: 4rem; 
+    background-color: var(--primary90);
+    border: 1px solid var(--primary80);
+    border-radius: 0.5rem; 
+    margin-right: 1rem;
+}
+
+
+.output__cssVariables {
+  background-color: transparent;
+    color: var(--primary10);
+    width: 300px;
+    height: 300px;
+    padding: 1rem;
+}
+
+
+.darkmodeToggle {
+  width: 20px;
+  height: 20px;
+  place-self: end;
+  opacity: 0.5;
+  transition: all 800ms ease;
+  rotate: -0deg;
+}
+.darkmodeToggle:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+body.--darkmode .darkmodeToggle {
+  rotate: 180deg;
+  filter: invert(1);
+}
+
+/* Darkmode */
+  .--darkmode .tonalPreviews {
+    background-color: var(--primary10);
+  }
+
+
+  .--darkmode .tonalPreview__label,
+  .--darkmode .output__cssVariables {
+    color: var(--primary80);
+  }
+  
+  body.--darkmode  {
+    background-color: var(--primary20);
+  }
+
+
+
+
+
+  body {
+    background-color: var(--primary99);
+    max-width: 800px;
+    min-width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding-top:1rem;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+}
+
+section.color-picker {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+}
+
+body.--inactive .tonalPreviews,
+body.--inactive .output__cssVariables {display:none;}
